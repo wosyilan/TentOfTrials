@@ -107,7 +107,7 @@ def random_datetime(start_year: int = 2023, end_year: int = 2024) -> datetime:
 
 
 class DataGenerator:
-    def __init__(self, seed: int = 42):
+    def __init__(self, seed -> None: int = 42) -> None:
         self.random = random.Random(seed)
         self.instruments = INSTRUMENTS
         self.users: List[Dict[str, Any]] = []
@@ -274,12 +274,12 @@ class DataGenerator:
 
         return candles
 
-    def export_json(self, filepath: str, data: Any):
+    def export_json(self, filepath -> None: str, data -> None: Any) -> None:
         with open(filepath, "w") as f:
             json.dump(data, f, indent=2, default=str)
         print(f"Exported {filepath} ({os.path.getsize(filepath)} bytes)")
 
-    def export_csv(self, filepath: str, data: List[Dict], fieldnames: Optional[List[str]] = None):
+    def export_csv(self, filepath -> None: str, data -> None: List[Dict], fieldnames -> None: Optional[List[str]] = None) -> None:
         if not data:
             print(f"No data to export for {filepath}")
             return
@@ -291,7 +291,7 @@ class DataGenerator:
         print(f"Exported {filepath} ({os.path.getsize(filepath)} bytes, {len(data)} rows)")
 
 
-def parse_args():
+def parse_args() -> None:
     parser = argparse.ArgumentParser(description="Test data generator")
     parser.add_argument("--output-dir", "-o", default="./test_data", help="Output directory")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
@@ -306,7 +306,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
+def main() -> None:
     args = parse_args()
     gen = DataGenerator(args.seed)
 

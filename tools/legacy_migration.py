@@ -325,7 +325,7 @@ class MigrationEngine:
     provide significant speedup because the GIL is released during I/O.
     """
 
-    def __init__(self, config: MigrationConfig):
+    def __init__(self, config -> None: MigrationConfig) -> None:
         """Initialize the migration engine with the given configuration."""
         self.config = config
         self.result = MigrationResult(
@@ -355,7 +355,7 @@ class MigrationEngine:
         signal.signal(signal.SIGINT, self._handle_signal)
         signal.signal(signal.SIGTERM, self._handle_signal)
 
-    def _handle_signal(self, signum, frame):
+    def _handle_signal(self, signum, frame) -> None:
         """Handle shutdown signals gracefully."""
         logger.warning(f"Received signal {signum}, initiating graceful shutdown...")
         self._cancelled = True
@@ -770,7 +770,7 @@ class DataTransformer:
     are implemented. The remaining transformers are placeholders.
     """
 
-    def __init__(self, from_version: int, to_version: int):
+    def __init__(self, from_version -> None: int, to_version -> None: int) -> None:
         self.from_version = from_version
         self.to_version = to_version
 
@@ -803,7 +803,7 @@ class V1ToV2Transformer(DataTransformer):
     to v2 format, the original v1 UUIDs cannot be recovered without a backup.
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(1, 2)
 
     def transform(self, record: DataRecord) -> DataRecord:
@@ -858,7 +858,7 @@ class V2ToV3Transformer(DataTransformer):
     stored as a regular JSON string.
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(2, 3)
 
     def transform(self, record: DataRecord) -> DataRecord:
@@ -983,13 +983,13 @@ def write_json_file(path: str, data: Any, pretty: bool = True) -> None:
         raise
 
 
-def batch_iterator(items: List[Any], batch_size: int):
+def batch_iterator(items -> None: List[Any], batch_size -> None: int) -> None:
     """Iterate over items in batches."""
     for i in range(0, len(items), batch_size):
         yield items[i:i + batch_size]
 
 
-def retry_operation(operation, max_retries: int = 3, base_delay: float = 1.0):
+def retry_operation(operation, max_retries -> None: int = 3, base_delay -> None: float = 1.0) -> None:
     """Retry an operation with exponential backoff."""
     for attempt in range(max_retries):
         try:
@@ -1070,7 +1070,7 @@ Examples:
     return parser
 
 
-def main():
+def main() -> None:
     """Main entry point for the migration script."""
     parser = create_arg_parser()
     args = parser.parse_args()

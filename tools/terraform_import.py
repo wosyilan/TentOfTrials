@@ -121,7 +121,7 @@ class ImportResult:
 # ---------------------------------------------------------------------------
 
 class TerraformImporter:
-    def __init__(self, state_dir: str = ".", terraform_binary: str = "terraform"):
+    def __init__(self, state_dir -> None: str = ".", terraform_binary -> None: str = "terraform") -> None:
         self.state_dir = Path(state_dir)
         self.terraform_binary = terraform_binary
         self.results: List[Dict[str, Any]] = []
@@ -427,7 +427,7 @@ class TerraformImporter:
             return unmanaged
 
 
-def parse_args():
+def parse_args() -> None:
     parser = argparse.ArgumentParser(description="Terraform resource import tool")
     parser.add_argument("--state-dir", default=".", help="Directory containing Terraform state files")
     parser.add_argument("--terraform-bin", default="terraform", help="Path to terraform binary")
@@ -444,7 +444,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
+def main() -> None:
     args = parse_args()
     if args.verbose:
         logger.setLevel(logging.DEBUG)

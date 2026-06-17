@@ -159,7 +159,7 @@ class CodeAnalyzer:
     reports for different audiences (engineering, management, compliance).
     """
 
-    def __init__(self, repo_dir: str, exclude_dirs: Optional[List[str]] = None):
+    def __init__(self, repo_dir -> None: str, exclude_dirs -> None: Optional[List[str]] = None) -> None:
         self.repo_dir = Path(repo_dir).resolve()
         self.exclude_dirs = exclude_dirs or [
             ".git", "node_modules", "target", "build", "dist",
@@ -683,7 +683,7 @@ class CodeAnalyzer:
         return "\n".join(html_parts)
 
 
-def main():
+def main() -> None:
     """CLI entry point."""
     parser = argparse.ArgumentParser(description="Legacy System Analyzer")
     parser.add_argument("--repo-dir", "-r", default=".", help="Repository directory")

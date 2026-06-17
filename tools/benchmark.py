@@ -380,7 +380,7 @@ def run_spike_benchmark(url: str, concurrency: int, duration: float,
     return aggregate_results(results, "spike", url, concurrency)
 
 
-def print_results(result: BenchmarkResult):
+def print_results(result -> None: BenchmarkResult) -> None:
     print(f"\n{'='*60}")
     print(f"  Benchmark: {result.benchmark_type.upper()}")
     print(f"  Target: {result.target_endpoint}")
@@ -410,7 +410,7 @@ def print_results(result: BenchmarkResult):
     print(f"{'='*60}\n")
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="API Benchmark Tool")
     parser.add_argument("--endpoint", "-e", default="http://localhost:8080/health",
                        help="API endpoint URL")

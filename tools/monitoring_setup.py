@@ -372,7 +372,7 @@ def backup_monitoring_config(output_dir: str, prometheus_url: str,
     return True
 
 
-def parse_args():
+def parse_args() -> None:
     parser = argparse.ArgumentParser(description="Monitoring setup tool")
     parser.add_argument("--prometheus-url", default=DEFAULT_PROMETHEUS_URL)
     parser.add_argument("--alertmanager-url", default=DEFAULT_ALERTMANAGER_URL)
@@ -392,7 +392,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
+def main() -> None:
     args = parse_args()
 
     if args.check:

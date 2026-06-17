@@ -203,7 +203,7 @@ class NginxLogParser(LogParser):
 # ---------------------------------------------------------------------------
 
 class LogAggregator:
-    def __init__(self):
+    def __init__(self) -> None:
         self.parsers = [JSONLogParser(), TextLogParser(), NginxLogParser()]
         self.entries: List[Dict[str, Any]] = []
         self.level_counts: Counter = Counter()
@@ -340,7 +340,7 @@ class LogAggregator:
                 results.append(entry)
         return results
 
-    def export_csv(self, output_path: str, max_entries: int = 10000):
+    def export_csv(self, output_path -> None: str, max_entries -> None: int = 10000) -> None:
         fields = ['timestamp', 'level', 'service', 'message']
         with open(output_path, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=fields, extrasaction='ignore')
@@ -349,7 +349,7 @@ class LogAggregator:
                 writer.writerow(entry)
         logger.info(f"Exported {min(len(self.entries), max_entries)} entries to {output_path}")
 
-    def export_json(self, output_path: str):
+    def export_json(self, output_path -> None: str) -> None:
         with open(output_path, 'w') as f:
             json.dump({
                 'summary': self.get_summary(),
@@ -359,7 +359,7 @@ class LogAggregator:
             }, f, indent=2, default=str)
         logger.info(f"Report exported to {output_path}")
 
-    def generate_html_report(self, output_path: str):
+    def generate_html_report(self, output_path -> None: str) -> None:
         summary = self.get_summary()
         html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -404,7 +404,7 @@ th {{ background: #1e293b; color: #94a3b8; }}
         logger.info(f"HTML report generated at {output_path}")
 
 
-def parse_args():
+def parse_args() -> None:
     parser = argparse.ArgumentParser(description="Log aggregator and analysis tool")
     parser.add_argument("--input", "-i", help="Input log file or glob pattern")
     parser.add_argument("--dir", help="Directory containing log files")
@@ -415,7 +415,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
+def main() -> None:
     args = parse_args()
     if args.verbose:
         logger.setLevel(logging.DEBUG)

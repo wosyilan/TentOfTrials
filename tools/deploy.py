@@ -120,7 +120,7 @@ def load_deployment_history(env: str) -> List[Dict]:
     return []
 
 
-def save_deployment_history(env: str, history: List[Dict]):
+def save_deployment_history(env -> None: str, history -> None: List[Dict]) -> None:
     with open(f".deploy_history_{env}.json", "w") as f:
         json.dump(history, f, indent=2)
 
@@ -354,7 +354,7 @@ def rollback_service(service: str, env: str, version: str) -> bool:
                           skip_build=True, skip_test=True, skip_health=False)
 
 
-def list_deployments(env: str, service: Optional[str] = None):
+def list_deployments(env -> None: str, service -> None: Optional[str] = None) -> None:
     history = load_deployment_history(env)
     if service:
         history = [d for d in history if d["service"] == service]
@@ -368,7 +368,7 @@ def list_deployments(env: str, service: Optional[str] = None):
     print()
 
 
-def parse_args():
+def parse_args() -> None:
     parser = argparse.ArgumentParser(description="Deployment tool")
     parser.add_argument("--env", "-e", required=True, choices=list(ENVIRONMENTS.keys()),
                        help="Target environment")
@@ -387,7 +387,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
+def main() -> None:
     args = parse_args()
 
     if args.list:
