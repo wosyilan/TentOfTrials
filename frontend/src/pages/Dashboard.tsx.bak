@@ -1,5 +1,4 @@
 import { ErrorBoundary } from "../components/ErrorBoundary";
-import { ErrorBoundary } from "../components/ErrorBoundary";
 import React from 'react';
 import { useDashboardStats } from '../hooks';
 
@@ -16,7 +15,7 @@ const Dashboard: React.FC = () => {
   const { data: stats, isLoading, error } = useDashboardStats();
 
   if (isLoading) {
-    return (<ErrorBoundary>
+    return (
       <div className="dashboard-loading">
         <div className="spinner" />
         <p>Loading dashboard data...</p>
@@ -80,5 +79,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-</ErrorBoundary>
 export default Dashboard;

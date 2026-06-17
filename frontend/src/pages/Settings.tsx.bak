@@ -1,5 +1,4 @@
 import { ErrorBoundary } from "../components/ErrorBoundary";
-import { ErrorBoundary } from "../components/ErrorBoundary";
 import React from 'react';
 
 const settingsSections = [
@@ -46,7 +45,7 @@ const Settings: React.FC = () => {
   const [activeSection, setActiveSection] = React.useState('general');
   const [dirty, setDirty] = React.useState(false);
 
-  return (<ErrorBoundary>
+  return (
     <div className="settings">
       <div className="settings-header">
         <h2>Settings</h2>
@@ -119,5 +118,4 @@ const Settings: React.FC = () => {
   );
 };
 
-</ErrorBoundary>
 export default Settings;

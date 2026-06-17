@@ -1,5 +1,4 @@
 import { ErrorBoundary } from "../components/ErrorBoundary";
-import { ErrorBoundary } from "../components/ErrorBoundary";
 import React from 'react';
 
 const metricPlaceholders = [
@@ -14,7 +13,7 @@ const metricPlaceholders = [
 const Analytics: React.FC = () => {
   const [timeRange, setTimeRange] = React.useState('24h');
 
-  return (<ErrorBoundary>
+  return (
     <div className="analytics">
       <div className="analytics-header">
         <div>
@@ -63,5 +62,4 @@ const Analytics: React.FC = () => {
   );
 };
 
-</ErrorBoundary>
 export default Analytics;

@@ -1,4 +1,3 @@
-import { ErrorBoundary } from "../components/ErrorBoundary";
 /**
  * AdminPage - Administrative dashboard for system management.
  *
@@ -155,7 +154,7 @@ export function AdminPage() {
   const renderTabContent = () => {
     switch (activeTab) {
       case 'overview':
-        return (<ErrorBoundary>
+        return (
           <div>
             {/* System health cards */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16, marginBottom: 24 }}>
@@ -619,5 +618,4 @@ export function AdminPage() {
   );
 }
 
-</ErrorBoundary>
 export default AdminPage;
