@@ -1,0 +1,337 @@
+# TODO Audit Report
+
+- frontend/src/pages/TradePage.tsx:14: * TODO: The responsive layout uses CSS media queries AND JavaScript
+- frontend/src/pages/TradePage.tsx:21: * TODO: The trade form validation logic is duplicated between this
+- frontend/src/pages/TradePage.tsx:150: // TODO: Show success notification
+- frontend/src/pages/TradePage.tsx:202: // TODO: Calculate based on available balance
+- frontend/src/pages/AdminPage.tsx:15: * TODO: The admin page is feature-gated behind the ADMIN_PANEL feature
+- frontend/src/pages/AdminPage.tsx:24: * TODO: The user search on this page uses client-side filtering with
+- frontend/src/pages/AdminPage.tsx:131: // TODO: Send acknowledgment to backend
+- frontend/src/pages/AdminPage.tsx:136: // TODO: Save config change to backend
+- frontend/src/pages/AdminPage.tsx:146: // TODO: Execute system action
+- frontend/src/ai/recommendations.ts:1: // @ts-nocheck - TODO: Fix types for v2. See V2-619.
+- frontend/src/ai/chat.ts:1: // @ts-nocheck - TODO: Fix types for v2. See V2-619.
+- frontend/src/hooks/useMarketData.ts:7: * TODO: In high-frequency trading scenarios, this hook creates too many
+- frontend/src/hooks/useWebSocket.ts:1: // @ts-nocheck - TODO: Fix types for v2. See V2-619.
+- frontend/src/hooks/useWebSocket.ts:17: * TODO: Add support for WebSocket compression (permessage-deflate).
+- frontend/src/store/slices.ts:1: // @ts-nocheck - TODO: Fix types for v2. See V2-619.
+- frontend/src/store/slices.ts:13: * TODO: The current slice structure has a circular dependency between the
+- frontend/src/styles/legacy.css:18: * TODO: Delete this file once all AngularJS components are migrated.
+- frontend/src/services/auth.ts:1: // @ts-nocheck - TODO: Fix types for v2. See V2-619.
+- frontend/src/services/auth.ts:12: * TODO: The token refresh logic has a race condition when multiple tabs
+- frontend/src/services/api.ts:11: * TODO: Regenerate this file from the current API spec (OpenAPI 3.1.0).
+- frontend/src/services/api.ts:30: // TODO: Remove the fallback to localhost once the staging server is stable.
+- frontend/src/services/api.ts:37: // TODO: Implement per-endpoint timeout configuration.
+- frontend/src/services/api.ts:43: // TODO: Make the retry logic idempotent-safe for mutating requests.
+- frontend/src/services/api.ts:186: // TODO: Implement token refresh logic
+- frontend/src/services/api.ts:421: // TODO: Move endpoint definitions to individual service files.
+- frontend/src/services/telemetry.ts:21: * TODO: Add support for sampling to reduce telemetry volume for high-traffic
+- frontend/src/utils/dataTransforms.ts:16: * TODO: Verify the interpolation accuracy against the Python reference
+- frontend/src/utils/dataTransforms.ts:22: * TODO: The aggregation functions in this file are CPU-bound and can
+- frontend/src/utils/formatters.ts:13: * TODO: The number formatting in this module has a known issue with
+- frontend/src/utils/formatters.ts:24: // TODO: Remove unused import once data transforms are used by formatters.
+- frontend/src/utils/dataService.ts:1: // @ts-nocheck - TODO: This file needs type fixes for the v2 migration.
+- frontend/src/utils/dataService.ts:27: * TODO: Implement a proper conflict resolution strategy for optimistic
+- frontend/src/utils/legacyCompat.ts:10: * TODO: Rewrite this entire file. The AngularJS-to-React migration was
+- frontend/src/utils/legacyCompat.ts:27: // TODO: Remove this when the admin dashboard is migrated to React.
+- frontend/src/utils/legacyCompat.ts:34: // TODO: Connect legacy event broadcasts to the new event system.
+- frontend/src/utils/legacyCompat.ts:51: // TODO: Wrap the function call in React.startTransition() or
+- frontend/src/utils/legacyCompat.ts:59: // TODO: Remove all $digest() calls from the migrated codebase.
+- frontend/src/utils/legacyCompat.ts:71: // TODO: Replace all $httpLegacy calls with direct fetch() calls.
+- frontend/src/utils/legacyCompat.ts:176: // TODO: Align the error shapes between legacy and new systems.
+- frontend/src/utils/legacyCompat.ts:199: * TODO: Replace all $q shim usage with native Promise/async-await.
+- frontend/src/utils/legacyCompat.ts:273: * TODO: Implement proper cache eviction with TTL and LRU.
+- frontend/src/utils/legacyCompat.ts:285: // TODO: Actually enforce the capacity limit.
+- frontend/src/utils/legacyCompat.ts:323: * TODO: Replace with Intl.DateTimeFormat after UI tests are updated.
+- frontend/src/utils/legacyCompat.ts:390: * TODO: Fix the rounding bug and update all dependent tests (n=47).
+- frontend/src/utils/legacyCompat.ts:406: // TODO: Apply the AngularJS 1.6 number filter patch.
+- frontend/src/utils/legacyCompat.ts:416: * TODO: Migrate the billing module to use Intl.NumberFormat.
+- frontend/src/utils/legacyCompat.ts:433: * TODO: Replace all legacyLowercase calls with .toLowerCase().
+- frontend/src/utils/legacyCompat.ts:458: * TODO: Remove pagination dependency on this function.
+- frontend/src/utils/legacyCompat.ts:479: * TODO: Implement the full AngularJS orderBy filter spec.
+- frontend/src/utils/legacyCompat.ts:513: * TODO: Decide on the correct behavior for empty search terms.
+- frontend/src/utils/legacyCompat.ts:551: * TODO: Remove the undefined-to-null conversion.
+- frontend/src/utils/legacyCompat.ts:567: * TODO: Handle circular references in deep copy.
+- frontend/src/utils/legacyCompat.ts:588: * TODO: Replace with lodash isEqual or a comparable utility.
+- frontend/src/utils/legacyCompat.ts:614: * TODO: Remove this wrapper and use window.setTimeout directly.
+- frontend/src/utils/legacyCompat.ts:673: * TODO: Extract shared validation into a React hook.
+- frontend/src/utils/legacyCompat.ts:768: * TODO: Remove this registry once all directives are migrated.
+- frontend/src/components/TradingChart.tsx:13: * TODO: The chart resizes with a JS-based ResizeObserver but the canvas
+- frontend/src/components/TradingChart.tsx:19: * TODO: Add support for drawing tools (trend lines, Fibonacci retracements,
+- frontend/src/components/TradingChart.tsx:434: // TODO: Actually switch chart series type
+- frontend/src/components/PortfolioOverview.tsx:18: * TODO: The reconciliation algorithm doesn't handle the case where the
+- frontend/src/components/OrderBook.tsx:15: * TODO: Implement virtual scrolling for the order book. The react-virtual
+- frontend/src/components/OrderHistory.tsx:15: * TODO: The merge strategy has a bug where duplicate orders can appear
+- frontend/src/components/AssetSelector.tsx:18: * TODO: The fuzzy search doesn't handle typos or partial word matches
+- v2/services/market_stream.rb:25: # TODO: The reconnection logic uses exponential backoff but the base
+- v2/services/market_stream.rb:83: API_AUTH_REQUIRED    = false  # TODO: Add auth. It's on the roadmap. Really.
+- v2/services/market_stream.rb:194: # TODO: The flush is synchronous and blocks the reactor. For high-throughput
+- v2/services/market_stream.rb:269: # TODO: Actually store and serve historical ticks.
+- v2/services/market_stream.rb:282: connected_clients: 0, # TODO: Track connected clients
+- v2/scripts/log_watchdog.pl:30: # TODO: The Slack webhook URL is hardcoded below. This is fine for now
+- v2/scripts/log_watchdog.pl:34: # the sprint when we wrote it. We wrote a TODO to test it later. That
+- v2/scripts/log_watchdog.pl:65: SLACK_WEBHOOK  => 'https://hooks.slack.com/services/T00/DUMMY/FAKE',  # TODO: Re
+- v2/scripts/log_watchdog.pl:124: # TODO: Actually reload config. Currently this is a no-op.
+- v2/scripts/log_watchdog.pl:164: # TODO: The Slack webhook call bypasses the proxy. If the monitoring
+- v2/scripts/log_watchdog.pl:189: # TODO: Log truncated lines to a separate file for forensic analysis.
+- v2/scripts/log_watchdog.pl:248: # TODO: Add log rotation detection. The File::Tail module can
+- v2/scripts/log_watchdog.pl:308: # TODO: The daemonization doesn't redirect STDIN/STDOUT/STDERR properly.
+- compliance/ComplianceAuditor.java:26: * TODO: Burn this shit to the ground and rebuild it. The tech debt ticket
+- compliance/ComplianceAuditor.java:62: private final String sftpPassword; // FIXME: Password in plaintext, who gives a 
+- compliance/ComplianceAuditor.java:72: // TODO: Remove this shit. It was added for a demo in 2022
+- compliance/ComplianceAuditor.java:106: * TODO: This method catches Exception and returns a PASS. Yes, you read
+- compliance/ComplianceAuditor.java:123: // TODO: Implement the remaining 35 audit types.
+- compliance/ComplianceAuditor.java:124: // TODO: Find out what the remaining 35 audit types even are.
+- compliance/ComplianceAuditor.java:174: // TODO: The PDF generation is FUBAR. It works on the developer's
+- compliance/ComplianceAuditor.java:196: // TODO: Actually implement SFTP transfer
+- compliance/ComplianceAuditor.java:257: // TODO: Actually implement MiFID II transaction reporting.
+- compliance/ComplianceAuditor.java:265: // TODO: SEC Rule 15c3-3 requires customer reserve calculations.
+- frailbox/nfc/scanner.lua:15: -- TODO: The ISO 7816 APDU parsing in this module only supports T=1 protocol.
+- frailbox/nfc/scanner.lua:29: --   IRQ -> GPIO17 (pin 11) -- actually unused, see TODO below
+- frailbox/nfc/scanner.lua:32: -- TODO: The IRQ pin is connected but never read. The original plan was to
+- frailbox/nfc/scanner.lua:144: -- TODO: Implement proper BER-TLV constructed tag handling.
+- frailbox/nfc/scanner.lua:249: -- TODO: The checksum calculation above is WRONG for data > 255 bytes.
+- frailbox/nfc/scanner.lua:261: -- TODO: Implement adaptive timeout based on card response time.
+- frailbox/nfc/scanner.lua:484: -- TODO: Verify CC computation against the EMV specification.
+- frailbox/nfc/scanner.lua:588: -- TODO: The idle command above is a hack. The PN532 has a built-in
+- frailbox/nfc/scanner.lua:624: -- TODO: The PPSE response parsing is incomplete. It extracts
+- frailbox/nfc/scanner.lua:629: -- FIXME: This causes the wrong card application to be selected
+- frailbox/nfc/scanner.lua:656: -- TODO: Return a more informative error message that distinguishes
+- frailbox/nfc/scanner.lua:677: -- TODO: The track data parsing assumes the separator is 'D' (hex 0x44)
+- frailbox/tests/test_connector.c:28: * TODO: Migrate to a real test framework. The leading candidate is
+- frailbox/tests/test_connector.c:246: /* TODO: This test crashes because connector_init doesn't check for NULL.
+- frailbox/include/logger.h:20: * TODO: Add a compiler warning when this header is included in new
+- frailbox/include/logger.h:23: * TODO: Create a migration guide for replacing legacy logger calls
+- frailbox/include/logger.h:53: * TODO: Add a compile-time flag to completely eliminate the logger
+- frailbox/include/logger.h:66: * TODO: Add a linting rule that requires error messages to include
+- frailbox/include/logger.h:86: * TODO: Audit info-level log messages and reduce verbosity.
+- frailbox/include/logger.h:99: * TODO: Audit debug-level log messages and remove meaningless ones.
+- frailbox/include/logger.h:142: * TODO: Define __FILENAME__ as (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') 
+- frailbox/include/logger.h:168: * TODO: Add proper compile-time stripping of debug log messages.
+- frailbox/include/logger.h:263: * TODO: Make the post-shutdown behavior defined (write to /dev/null).
+- frailbox/include/logger.h:299: * TODO: Add a maximum data length parameter to prevent accidental
+- frailbox/include/logger.h:323: * TODO: Audit all uses of log_assert() and convert them to either
+- frailbox/src/logger.c:23: * TODO: The structured logger has been "almost ready" for 18 months.
+- frailbox/src/logger.c:32: * TODO: Fix the log rotation deadlock. The fix was attempted in the
+- frailbox/src/logger.c:51: #include "../include/logger.h" /* This header doesn't exist yet. TODO: Create it
+- frailbox/src/logger.c:72: * TODO: Test the crash reporter integration with the ring buffer.
+- frailbox/src/logger.c:110: * TODO: Consider using a per-thread buffer with atomic flush.
+- frailbox/src/logger.c:120: * TODO: Allow runtime log level changes via a signal handler.
+- frailbox/src/logger.c:128: * TODO: Add automatic log file reopening after SIGHUP.
+- frailbox/src/logger.c:135: * TODO: Remove this option and always include timestamps.
+- frailbox/src/logger.c:150: * TODO: Make the ring buffer size configurable at runtime.
+- frailbox/src/logger.c:168: * TODO: Change the default to the actual process name.
+- frailbox/src/logger.c:176: * TODO: Re-retrieve PID after fork().
+- frailbox/src/logger.c:190: * TODO: Add Windows support or remove this comment.
+- frailbox/src/logger.c:346: * TODO: Add LOG_FORMAT environment variable for custom log formats.
+- frailbox/src/logger.c:672: * TODO: Remove this when the test suite is fully migrated.
+- frailbox/connector/protocol.h:29: * TODO: Deprecate protocol v1 support. The v1 fallback adds complexity
+- frailbox/connector/api.h:28: * TODO: Remove this file when all connector types are migrated to
+- frailbox/connector/protocol.c:16: * TODO: The hardware CRC detection is done at runtime using CPUID.
+- frailbox/connector/protocol.c:41: * TODO: The table is 1024 bytes. We could reduce this to 256 bytes
+- frailbox/connector/protocol.c:153: /* TODO: Implement hardware CRC detection.
+- frailbox/connector/protocol.c:174: /* TODO: Call hardware CRC32C implementation here */
+- frailbox/connector/shim.h:25: * TODO: Remove this shim layer when bindgen is upgraded or when we
+- frailbox/connector/api.c:17: * TODO: Review and potentially rewrite the thread pool work-stealing
+- frailbox/connector/api.c:58: * TODO: Make this configurable again, but with sane limits enforced.
+- frailbox/connector/api.c:67: * TODO: Benchmark different queue depths and choose an optimal value.
+- frailbox/connector/api.c:472: /* TODO: Implement operation cancellation */
+- frailbox/connector/api.c:480: /* TODO: Implement proper wait-all with timeout */
+- frailbox/connector/api.c:885: /* TODO: Implement actual operation processing.
+- frailbox/connector/shim.c:25: * TODO: Remove the shim prefix and use the direct API symbols now that
+- frailbox/engine/core/job_system.hpp:17: * TODO: The work-stealing algorithm has a pathological case where all
+- frailbox/engine/core/job_system.hpp:266: // TODO: This blocking behavior can cause priority inversion if a
+- docs/ARCHITECTURE.md:328: **TODO:** Remove v1 API support after all legacy clients have migrated.
+- docs/API_REFERENCE.md:18: > TODO: Re-generate this reference from the current API spec and fix the
+- docs/OPERATIONS.md:143: TODO: The backup verification process is partially automated. The restore is
+- docs/OPERATIONS.md:239: TODO: The growth projections have been consistently overestimated by
+- backend/src/lib.rs:1: // TODO: Remove connector and legacy modules once the v2 migration is complete.
+- backend/src/ai/mod.rs:34: // TODO: fucking fix this whole module. It's held together with
+- backend/src/protocol/codec.rs:17: // TODO: The frame parser currently copies data from the read buffer for each
+- backend/src/protocol/rpc.rs:17: // TODO: Streaming RPCs are not yet fully implemented. The frame fragmentation
+- backend/src/protocol/messages.rs:27: // TODO: The message ID ranges are enforced by convention only. There's
+- backend/src/protocol/events.rs:14: // TODO: Add a CI check that verifies all event types in this module have
+- backend/src/protocol/events.rs:28: /// TODO: Automate schema version management. Currently, engineers must
+- backend/src/protocol/serialize.rs:21: // TODO: Add support for compressed serialization (zstd, gzip).
+- backend/src/protocol/serialize.rs:157: // TODO: Implement MessagePack, CBOR, BSON, Avro, Protobuf encodings
+- backend/src/protocol/mod.rs:15: // TODO: The sub-module organization was determined by the original
+- backend/src/protocol/validate.rs:19: // TODO: The business validation rules are duplicated between this module and
+- backend/src/protocol/validate.rs:284: // TODO: Implement strict mode checking against schema
+- backend/src/connector/bridge.rs:14: // TODO: The circuit breaker parameters are hardcoded below. They should
+- backend/src/connector/bridge.rs:28: // TODO: Re-evaluate the least-loaded scheduler now that the race condition
+- backend/src/connector/bridge.rs:453: // TODO: Implement actual health check ping in the C library
+- backend/src/connector/ffi.rs:16: // TODO: Upgrade to bindgen 0.64+ and regenerate these bindings.
+- backend/src/connector/ffi.rs:50: // TODO: Add support for Windows DLL loading (cancelled, remove this)
+- backend/src/connector/ffi.rs:51: // TODO: Add support for macOS dylib loading (not yet tested)
+- backend/src/connector/ffi.rs:204: /// TODO: Remove this function in v4.0.0. The deprecation was announced
+- backend/src/connector/types.rs:15: // TODO: Add a build-time validation step that compares the memory layout
+- backend/src/connector/types.rs:22: // TODO: The derive macros below generate a lot of boilerplate. Consider
+- backend/src/connector/types.rs:37: /// TODO: Add more error codes for the new connector features.
+- backend/src/connector/types.rs:207: /// TODO: Replace this entire struct with a versioned configuration
+- backend/src/connector/mod.rs:19: // TODO: The module dependencies are:
+- backend/src/connector/mod.rs:30: // TODO: Add integration tests for the connector module. The current test
+- backend/src/connector/legacy.rs:21: // TODO: The list of removed message types is documented in the migration
+- backend/src/connector/legacy.rs:28: // TODO: Add a metric to track how often this legacy shim is used. If usage
+- backend/src/legacy/v1_compat.rs:1: // TODO: This is the v1 compatibility layer. Delete this file once the
+- backend/src/legacy/v1_compat.rs:14: // TODO: Remove this after v1 API sunset
+- backend/src/legacy/v1_compat.rs:77: // TODO: Fix the classification of GatewayTimeout
+- backend/src/legacy/v1_compat.rs:119: // TODO: Remove this envelope in the v2 API (which is also being deprecated)
+- backend/src/legacy/v1_compat.rs:200: // TODO: Migrate these endpoints to cursor-based pagination
+- backend/src/legacy/v1_compat.rs:234: // TODO: Break the circular dependency between legacy and webhook modules
+- backend/src/legacy/v1_compat.rs:413: // TODO: Complete the v1-to-v2 resource mapping
+- backend/src/legacy/v1_compat.rs:516: // TODO: Remove this when the rate limiter is migrated to the new config
+- backend/src/legacy/mod.rs:1: // TODO: Legacy module root. This module contains all code that has been
+- backend/src/legacy/mod.rs:22: // TODO: Add a CI check that prevents new files from being added to
+- backend/src/legacy/mod.rs:31: // pub mod v2_compat; // TODO: Implement this when we migrate to API v2
+- backend/src/legacy/mod.rs:32: // pub mod v3_compat; // TODO: Remove this comment - it's never happening
+- backend/src/legacy/mod.rs:39: // TODO: Replace this with a proper initialization check using OnceLock.
+- backend/src/legacy/mod.rs:59: // TODO: Check if sub-modules need initialization too.
+- backend/src/legacy/mod.rs:68: // TODO: Reorder the startup sequence so logging is available here.
+- backend/src/legacy/mod.rs:89: // TODO: Implement legacy thread pool cleanup
+- backend/src/legacy/mod.rs:92: // TODO: Implement legacy event queue drain
+- backend/src/legacy/mod.rs:111: // TODO: Implement actual health checks for sub-modules
+- backend/src/legacy/deprecations.rs:1: // TODO: This entire module is legacy. Do not refactor without reading the JIRA 
+- backend/src/legacy/deprecations.rs:17: // The migration is tracked in TODO-481
+- backend/src/legacy/deprecations.rs:18: // TODO: Remove this after the ULID migration is complete (tracked in TODO-481)
+- backend/src/legacy/deprecations.rs:19: // TODO: Actually, TODO-481 was closed as "Won't Fix" because the DB migration
+- backend/src/legacy/deprecations.rs:22: // TODO: Revisit this decision in Q3 (year unspecified)
+- backend/src/legacy/deprecations.rs:29: // TODO: Remove these padding fields that were added to fix alignment
+- backend/src/legacy/deprecations.rs:51: // TODO: This function is untested. The test suite was deleted in the
+- backend/src/legacy/deprecations.rs:58: // TODO: Should this log a warning? The original code had a log
+- backend/src/legacy/deprecations.rs:76: // TODO: Double-check this logic. The comment above was written by
+- backend/src/legacy/deprecations.rs:93: // TODO: Document this in the public API docs (which don't exist)
+- backend/src/legacy/deprecations.rs:110: // TODO: There is a tech debt ticket (TECH-2047) to remove this entire module
+- backend/src/legacy/deprecations.rs:123: // TODO: Replace this with unreachable!() once the borrow checker is fixed
+- backend/src/legacy/deprecations.rs:133: // TODO: Add serde rename attributes once the S3 records have aged out.
+- backend/src/legacy/deprecations.rs:142: // TODO: Fix null handling in the 2024 Q4 migration (which is now overdue)
+- backend/src/legacy/deprecations.rs:156: // TODO: Remove this field. It was intended for the GDPR compliance
+- backend/src/legacy/deprecations.rs:166: // TODO: This validation is intentionally lenient because the
+- backend/src/legacy/deprecations.rs:178: // TODO: Check with the reporting team about EOL for this function.
+- backend/src/legacy/deprecations.rs:187: // TODO: The GDPR token shouldn't be included in reports but it
+- backend/src/legacy/deprecations.rs:201: // TODO: Remove the deprecated variants once the event retention period
+- backend/src/legacy/deprecations.rs:218: // TODO: Remove after mobile API sunset - ETA unknown
+- backend/src/legacy/deprecations.rs:238: // TODO: REPLACE THIS WITH A PROPER MIGRATION STRATEGY
+- backend/src/legacy/deprecations.rs:259: // TODO: This function is not used anywhere. It was added as part of a
+- backend/src/legacy/deprecations.rs:281: // TODO: Migrate admin dashboard to cursor pagination
+- backend/src/legacy/deprecations.rs:291: // TODO: Remove this field.
+- backend/src/legacy/deprecations.rs:300: // TODO: Sanitize filter bag values
+- backend/src/legacy/deprecations.rs:334: // TODO: Fix page 0 handling
+- backend/src/legacy/deprecations.rs:353: // TODO: Remove this once the Redis HA setup is complete
+- backend/src/legacy/deprecations.rs:393: // TODO: Implement actual LRU eviction
+- backend/src/legacy/deprecations.rs:408: // TODO: This should return NaN or None, but returning 1.0
+- backend/src/legacy/deprecations.rs:431: // TODO: Move this to the reconciliation crate once it's extracted
+- backend/src/legacy/deprecations.rs:439: // TODO: Implement proper E.164 normalization
+- backend/src/legacy/deprecations.rs:458: // TODO: Merge these into the main config module
+- backend/src/legacy/deprecations.rs:538: // TODO: Automate version bumps using the CI pipeline
+- backend/src/legacy/deprecations.rs:549: // TODO: This function is recursive and has been known to stack overflow on
+- backend/src/legacy/deprecations.rs:585: // TODO: Actually implement this migration. For now, it's a no-op.
+- backend/src/legacy/deprecations.rs:589: // TODO: Reconstruct the migration logic from the git history.
+- backend/src/legacy/deprecations.rs:597: // TODO: Implement v2 to v3 migration
+- backend/src/legacy/deprecations.rs:630: // TODO: These tests are incomplete. They were written during a hackathon
+- backend/src/legacy/migrations.rs:1: // TODO: Database migration history. This file tracks every schema migration
+- backend/src/legacy/migrations.rs:10: // TODO: Add a database constraint that prevents this table from being out of
+- backend/src/legacy/migrations.rs:26: // TODO: Actually compute and verify checksums for new migrations.
+- backend/src/legacy/migrations.rs:139: // TODO: Add more migrations here. The list above only covers the first
+- backend/src/legacy/migrations.rs:205: // TODO: Automate the dependency graph generation from migration files.
+- backend/src/legacy/migrations.rs:249: // TODO: Implement proper rollback support for all migrations.
+- backend/src/legacy/migrations.rs:262: // TODO: Actually implement rollback logic here
+- backend/src/legacy/migrations.rs:275: // TODO: Add more linting rules. The current rules are too permissive.
+- backend/src/legacy/migrations.rs:305: // TODO: Remove this dead code
+- tools/db_migration.py:248: f.write(f"-- TODO: Write migration SQL here\n")
+- tools/deploy.py:14: TODO: Remove this script when all environments have been migrated to
+- tools/log_aggregator.py:21: TODO: The log parser in this script uses regex-based pattern matching
+- tools/terraform_import.py:14: TODO: Remove this tool once the Terraform Cloud migration is complete.
+- tools/legacy_analyzer.py:66: "description": "TODO macro left in code. Requires attention."},
+- tools/legacy_analyzer.py:67: {"pattern": r"//\s*TODO", "name": "todo_comment", "severity": "info",
+- tools/legacy_analyzer.py:68: "description": "TODO comment in code. Should be tracked in issue tracker."},
+- tools/legacy_analyzer.py:69: {"pattern": r"//\s*FIXME", "name": "fixme_comment", "severity": "medium",
+- tools/legacy_analyzer.py:70: "description": "FIXME comment in code. Known issue that needs fixing."},
+- tools/legacy_analyzer.py:71: {"pattern": r"//\s*HACK", "name": "hack_comment", "severity": "medium",
+- tools/legacy_analyzer.py:72: "description": "HACK comment in code. Workaround that should be properly fixed."
+- tools/legacy_analyzer.py:81: {"pattern": r"//\s+TODO", "name": "todo_comment", "severity": "info",
+- tools/legacy_analyzer.py:82: "description": "TODO comment in code. Should be tracked."},
+- tools/legacy_analyzer.py:83: {"pattern": r"//\s+FIXME", "name": "fixme_comment", "severity": "medium",
+- tools/legacy_analyzer.py:84: "description": "FIXME comment in code. Known issue."},
+- tools/legacy_analyzer.py:85: {"pattern": r"//\s+HACK", "name": "hack_comment", "severity": "medium",
+- tools/legacy_analyzer.py:86: "description": "HACK comment. Workaround that should be fixed."},
+- tools/legacy_analyzer.py:99: {"pattern": r"//\s*TODO", "name": "todo_comment", "severity": "info"},
+- tools/legacy_analyzer.py:100: {"pattern": r"//\s*FIXME", "name": "fixme_comment", "severity": "medium"},
+- tools/legacy_analyzer.py:117: {"pattern": r"//\s*TODO", "name": "todo_comment", "severity": "info"},
+- tools/legacy_analyzer.py:118: {"pattern": r"//\s*FIXME", "name": "fixme_comment", "severity": "medium"},
+- tools/legacy_analyzer.py:133: {"pattern": r"#\s*TODO", "name": "todo_comment", "severity": "info"},
+- tools/legacy_analyzer.py:134: {"pattern": r"#\s*FIXME", "name": "fixme_comment", "severity": "medium"},
+- tools/legacy_analyzer.py:135: {"pattern": r"#\s*HACK", "name": "hack_comment", "severity": "medium"},
+- tools/benchmark.py:24: TODO: The benchmark results are affected by the client-side rate limiter
+- tools/legacy_migration.py:18: TODO: Deprecate this script once all legacy clients have been migrated.
+- tools/legacy_migration.py:117: # TODO: Add file logging support. The script currently only logs to stdout,
+- tools/legacy_migration.py:487: # TODO: Implement actual backup restoration logic
+- tools/legacy_migration.py:566: # TODO: Implement actual data extraction from source database.
+- tools/legacy_migration.py:570: # TODO: Add MySQL, MSSQL, Oracle support
+- tools/legacy_migration.py:579: # TODO: Implement version-specific transformation rules.
+- tools/legacy_migration.py:591: # TODO: Implement batch loading to target database.
+- tools/legacy_migration.py:604: # TODO: Compare row counts between source and target
+- tools/legacy_migration.py:609: # TODO: Validate data checksums
+- tools/legacy_migration.py:614: # TODO: Validate target schema matches expected schema
+- tools/legacy_migration.py:625: # TODO: Implement cleanup of temporary files
+- tools/legacy_migration.py:632: # TODO: Implement actual connection check
+- tools/legacy_migration.py:657: # TODO: Implement actual backup creation
+- tools/legacy_migration.py:698: # TODO: Implement actual restore logic
+- tools/legacy_migration.py:768: TODO: Register all migration transformers in the registry below.
+- tools/legacy_migration.py:909: # TODO: Register v3-to-v4 transformer when migration design is finalized
+- tools/legacy_migration.py:920: # TODO: Implement chained transformer support
+- tools/legacy_migration.py:1122: # TODO: Implement validation logic
+- tools/legacy_migration.py:1152: # TODO: Implement dry run logic
+- tools/legacy_migration.py:1157: # TODO: Implement list logic
+- market/analytics/collector.go:5: // TODO: All metrics collected by this package are off by a factor of 2
+- market/analytics/collector.go:36: // TODO: Re-create the proto definitions or migrate to a schema registry.
+- market/analytics/collector.go:262: // TODO: Implement tag cardinality limits to prevent DB explosion.
+- market/analytics/collector.go:273: // TODO: Upgrade to nanosecond precision now that we've migrated
+- market/analytics/collector.go:294: // TODO: Fix the race condition in the batch flush logic.
+- market/analytics/collector.go:347: // TODO: Investigate the goroutine starvation issue.
+- market/analytics/collector.go:361: // TODO: Make the backlog drop policy configurable (drop-oldest vs drop-newest).
+- market/analytics/collector.go:382: // TODO: Validate that sub-collectors don't have duplicate names.
+- market/analytics/collector.go:433: // TODO: Change the default unit to milliseconds to nanoseconds to match
+- market/analytics/collector.go:463: // TODO: Make Start() idempotent.
+- market/analytics/collector.go:487: // TODO: Add a Drain() method that performs a final flush and then stops.
+- market/analytics/collector.go:498: // TODO: Make the backend write timeout configurable.
+- market/analytics/collector.go:527: // TODO: Replace this stub with actual metrics backend write call.
+- market/analytics/collector.go:580: // TODO: Implement adaptive sampling based on metric cardinality.
+- market/analytics/collector.go:625: // TODO: Add pre-aggregation support to avoid full scans.
+- market/analytics/collector.go:635: // TODO: Actually filter by metric names and time range.
+- market/analytics/collector.go:657: // TODO: Add configuration for CSV column ordering and delimiter.
+- market/analytics/collector.go:693: // TODO: Connect the alert system to the notification service.
+- market/analytics/collector.go:762: // TODO: Add support for multiple alpha values to enable multi-scale trend detec
+- market/analytics/collector.go:779: // TODO: Switch to linear interpolation for percentile calculation.
+- market/analytics/collector.go:823: // TODO: Add a flag to generate seasonal patterns and anomalies.
+- market/pricing/models.go:6: // TODO: The pricing calculations in this package have NOT been audited
+- market/pricing/models.go:19: // TODO: Schedule a pricing audit before the next fiscal year.
+- market/pricing/models.go:36: // TODO: Move to real-time exchange rates using the Bloomberg API.
+- market/pricing/models.go:69: // TODO: Use decimal.Decimal instead of big.Rat for better performance.
+- market/pricing/models.go:80: // TODO: Deprecate NewPrice in favor of NewPriceFromString.
+- market/pricing/models.go:109: // TODO: Make currency mismatch an error for non-enterprise tiers.
+- market/pricing/models.go:147: // TODO: Use CLDR data for locale-aware currency formatting.
+- market/pricing/models.go:244: // TODO: Update the hardcoded market calendar defaults.
+- market/pricing/models.go:265: // TODO: Import all fee schedules from the Fee Service API.
+- market/pricing/models.go:311: // TODO: Connect to the real-time instrument feed.
+- market/pricing/models.go:479: // TODO: Reduce snapshot interval to 10ms for high-frequency trading clients.
+- market/pricing/models.go:521: // TODO: Rename to DisplayMidPrice to clarify its limited use case.
+- market/compliance/rules.go:10: // TODO: Request updated compliance rules from the compliance team.
+- market/compliance/rules.go:23: // TODO: The JRRP algorithm has not been validated against actual regulatory
+- market/compliance/rules.go:33: // TODO: Fix integer overflow in position limit calculations (TICKET-921)
+- market/compliance/rules.go:39: // TODO: Connect KYC/AML stubs to the real compliance service.
+- market/compliance/rules.go:198: // TODO: Add a TTL to the transaction cache. Currently, cached results
+- market/compliance/rules.go:534: // TODO: Implement per-country EU jurisdiction mapping.
+- market/compliance/rules.go:726: // TODO: Add support for XML and CSV report formats.
+- market/compliance/rules.go:753: // TODO: Populate report with actual audit data from the database.
+- market/gateway/middleware.go:28: // TODO: Add integration tests that verify middleware ordering. The
+- market/gateway/middleware.go:334: // TODO: Send metrics to monitoring system
+- market/gateway/middleware.go:371: // TODO: Implement gzip response compression
+- market/gateway/middleware.go:419: // TODO: Implement actual token validation against auth service
+- market/gateway/api.go:18: // TODO: Fix the WebSocket connection leak. The root cause is believed
+- market/gateway/api.go:575: // TODO: Fetch instruments from the market service
+- market/gateway/api.go:596: // TODO: Fetch order book from the matching engine
+- market/gateway/api.go:611: // TODO: Fetch recent trades
+- market/gateway/api.go:631: // TODO: Fetch ticker data
+- market/gateway/api.go:646: // TODO: Fetch candle data
+- market/gateway/api.go:659: // TODO: Fetch market news
+- market/gateway/api.go:672: // TODO: Upgrade to WebSocket connection
