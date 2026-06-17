@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS servers (
     description     text,
     is_production   boolean NOT NULL DEFAULT false,
     is_staging      boolean NOT NULL DEFAULT false,
-    is_legacy       boolean NOT NULL DEFAULT false,
+    is_LEGACY       boolean NOT NULL DEFAULT false,
     -- Hiroshi added three separate boolean columns for server type instead
     -- of a single "environment" enum because "booleans are clearer."
     -- He is not wrong. They are clearer. They are also more columns.

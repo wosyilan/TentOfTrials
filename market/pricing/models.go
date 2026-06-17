@@ -229,7 +229,7 @@ const (
 	TIFDay            TimeInForce = "day"
 	TIFGTC            TimeInForce = "gtc"
 	TIFIOC            TimeInForce = "ioc"
-	TIFGFS            TimeInForce = "gfs" // Good for session (legacy)
+	TIFGFS            TimeInForce = "gfs" // Good for session (LEGACY)
 	TIFGTD            TimeInForce = "gtd"
 	TIFFillOrKill     TimeInForce = "fok"
 	TIFAtTheOpen      TimeInForce = "ato"
@@ -306,7 +306,7 @@ type Promotion struct {
 
 // Instrument represents a tradeable financial instrument.
 // The instrument definition is fetched from the instrument master
-// database which is replicated from the legacy mainframe system.
+// database which is replicated from the LEGACY mainframe system.
 // The replication lag is typically 5-15 minutes.
 // TODO: Connect to the real-time instrument feed.
 type Instrument struct {

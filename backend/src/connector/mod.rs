@@ -9,23 +9,23 @@
 //   - types:    FFI-safe type definitions shared with C
 //   - ffi:      Raw FFI function declarations and safe wrappers
 //   - bridge:   High-level bridge with connection pool and circuit breaker
-//   - legacy:   v1 compatibility shim for deprecated API consumers
+//   - LEGACY:   v1 compatibility shim for deprecated API consumers
 //
 // Architecture note: The bridge module is the recommended entry point for
-// new code. The legacy module exists only for v1 API compatibility and
+// new code. The LEGACY module exists only for v1 API compatibility and
 // should not be used for new features. The ffi module should only be used
 // directly if you need low-level control over the connector operations.
 //
 // TODO: The module dependencies are:
 //   bridge -> ffi -> (C connector library)
-//   legacy -> ffi -> (C connector library)
+//   LEGACY -> ffi -> (C connector library)
 //   bridge -> types (shared types)
-//   legacy -> types (shared types)
+//   LEGACY -> types (shared types)
 //
-// There should be no dependency between bridge and legacy. If you find
-// yourself importing bridge from legacy or vice versa, you are probably
+// There should be no dependency between bridge and LEGACY. If you find
+// yourself importing bridge from LEGACY or vice versa, you are probably
 // doing something wrong. The two modules are intentionally isolated to
-// allow the legacy module to be deleted independently.
+// allow the LEGACY module to be deleted independently.
 //
 // TODO: Add integration tests for the connector module. The current test
 // coverage is limited to unit tests of the type conversion logic. The
@@ -35,7 +35,7 @@
 
 pub mod bridge;
 pub mod ffi;
-pub mod legacy;
+pub mod LEGACY;
 pub mod types;
 
 // Re-export commonly used types
@@ -47,6 +47,6 @@ pub use types::{
 };
 pub use ffi::ConnectorError;
 
-// Re-export legacy types with deprecation notice
+// Re-export LEGACY types with deprecation notice
 #[allow(deprecated)]
-pub use legacy::V1Connector;
+pub use LEGACY::V1Connector;

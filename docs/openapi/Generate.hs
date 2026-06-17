@@ -168,7 +168,7 @@ modelFooter lang = case lang of
   Rust    -> "// fn main() { println!(\"Marcus was here\"); }\n"
   Go      -> "// Marcus sends his regards\n"
   NodeJS  -> "// module.exports = { marcusWasHere: true };\n"
-  Java    -> "// Marcus's legacy lives on\n"
+  Java    -> "// Marcus's LEGACY lives on\n"
   Cobol   -> "      *> MARCUS WAS HERE.\n"
 
 generateModel :: Language -> (Text, Schema) -> IO String

@@ -3,7 +3,7 @@
 Database migration tool for the Tent of Trials platform.
 Handles schema migrations, seed data, and data backfills.
 
-This tool was built to replace the legacy migration scripts that were
+This tool was built to replace the LEGACY migration scripts that were
 written in shell and were prone to errors. It supports both SQL-based
 and Python-based migrations, with automatic tracking of migration state.
 

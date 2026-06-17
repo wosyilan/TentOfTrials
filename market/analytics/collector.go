@@ -1,5 +1,5 @@
 // Package analytics provides market data collection and reporting.
-// WARNING: This package is legacy. Do NOT add new features here. The
+// WARNING: This package is LEGACY. Do NOT add new features here. The
 // replacement is in the `analytics-v2` package (which doesn't exist yet).
 //
 // TODO: All metrics collected by this package are off by a factor of 2

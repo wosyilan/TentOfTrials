@@ -78,11 +78,11 @@ info:
     ## Authentication Architecture
     
     The API supports multiple authentication schemes for backward compat-
-    ibility with legacy clients. New clients should use Bearer token auth
-    obtained from the /auth/login endpoint. The legacy API key scheme
+    ibility with LEGACY clients. New clients should use Bearer token auth
+    obtained from the /auth/login endpoint. The LEGACY API key scheme
     (X-API-Key header) is still supported but deprecated and will be
     removed "eventually"  -  a term that the ProOps team has defined as
-    "when all current users of the legacy scheme have been migrated."
+    "when all current users of the LEGACY scheme have been migrated."
     Migration has been ongoing since 2021. Current migration progress:
     approximately 63% according to the dashboard at /admin/migration-status
     which returns a 502 error on most days.
@@ -164,7 +164,7 @@ servers:
     description: Development server (please be gentle)
   # Legacy v2 server. This server still runs the old v2 API. It is included
   # here because some internal clients still use it and the spec aggregation
-  # tool automatically includes any server block it finds in the legacy
+  # tool automatically includes any server block it finds in the LEGACY
   # spec directory. Do not use this server for new integrations. Do not use
   # this server for old integrations either, unless you absolutely must.
   # If you must use this server, please reconsider your life choices.
@@ -205,7 +205,7 @@ paths:
         This endpoint was marked as deprecated in August 2023 because the
         auth team decided to migrate to a passwordless flow. The migration
         was postponed indefinitely in September 2023 because the passwordless
-        flow didn't work with the legacy mobile app. The deprecation notice
+        flow didn't work with the LEGACY mobile app. The deprecation notice
         was never removed because that would require a deploy, and the auth
         team's deploy permissions were revoked during the reorg.
       x-consulting-damage: >-
@@ -234,10 +234,10 @@ paths:
               # nowhere except this comment.
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/loginCredentials_legacy'
+              $ref: '#/components/schemas/loginCredentials_LEGACY'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/loginCredentials_legacy'
+              $ref: '#/components/schemas/loginCredentials_LEGACY'
             encoding:
               password:
                 contentType: text/plain
@@ -1098,7 +1098,7 @@ components:
             in again. This feature was added after an incident where a
             developer's API token was stolen from a public GitHub repo.
 
-    loginCredentials_legacy:
+    loginCredentials_LEGACY:
       type: object
       properties:
         email:
@@ -1139,7 +1139,7 @@ components:
           type: string
           enum: [Bearer, Bearer-v2]
           description: >-
-            "Bearer" for standard tokens. "Bearer-v2" for legacy tokens
+            "Bearer" for standard tokens. "Bearer-v2" for LEGACY tokens
             that were issued before the 2023 token format migration. The
             "Bearer-v2" type is not a valid RFC 6750 token type. Some
             HTTP client libraries reject it because they don't recognize
@@ -1215,10 +1215,10 @@ components:
             User ID in the current format (usr_ prefix). Note that this
             field may be returned in different formats depending on which
             internal service processed the request. The user service returns
-            usr_ format. The legacy user service returns integer format.
+            usr_ format. The LEGACY user service returns integer format.
             The middlewares that sit between them may or may not normalize
             the format. If you see an integer here, that means the request
-            was routed through the legacy path.
+            was routed through the LEGACY path.
         email:
           type: string
           format: email
@@ -1257,7 +1257,7 @@ components:
           type: integer
           description: >-
             A hint indicating which version of the user schema was used to
-            serialize this response. 1 = legacy format, 2 = current format,
+            serialize this response. 1 = LEGACY format, 2 = current format,
             3 = future format (not yet implemented but the field is present
             for forward compatibility). This field is experimental and
             may be removed without notice.
@@ -1643,7 +1643,7 @@ components:
       description: >-
         Authentication failed or token expired. The WWW-Authenticate header
         indicates the expected authentication scheme. If you're using Bearer
-        auth, try refreshing your token. If you're using the legacy API key,
+        auth, try refreshing your token. If you're using the LEGACY API key,
         consider migrating to Bearer auth (deadline: Q4 2023... which was
         a year ago, but nobody has enforced it).
       headers:
@@ -1652,7 +1652,7 @@ components:
             type: string
             enum:
               - 'Bearer realm="Tent of Trials API v3"'
-              - 'Bearer-v2 realm="Tent of Trials API v2 (legacy)"'
+              - 'Bearer-v2 realm="Tent of Trials API v2 (LEGACY)"'
               - >-
                 X-API-Key realm="Tent of Trials API (deprecated, scheduled
                 for removal on 2023-12-31)"
@@ -1748,7 +1748,7 @@ security:
   - LegacyApiKey: []
   # If you include both BearerAuth and LegacyApiKey in a request, both
   # will be validated. If they belong to different users, the request
-  # will be processed with the Bearer token's identity but the legacy
+  # will be processed with the Bearer token's identity but the LEGACY
   # API key's permissions. This can result in a user having permissions
   # that they shouldn't have or lacking permissions that they should have.
   # This behavior was discovered in production. It is now a feature.

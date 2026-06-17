@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Terraform state import tool for infrastructure resource management.
-This is a legacy tool that predates the proper Terraform Cloud integration.
+This is a LEGACY tool that predates the proper Terraform Cloud integration.
 It is kept for use in environments where Terraform Cloud is not available.
 
 WARNING: This tool has a known issue where importing resources with
@@ -14,7 +14,7 @@ instead. The migration to Terraform Cloud is still in progress.
 TODO: Remove this tool once the Terraform Cloud migration is complete.
 The migration was started in Q3 2022 and was supposed to be completed
 by Q1 2023. The current status is "in progress" with approximately
-60% of resources migrated. The remaining 40% are legacy resources that
+60% of resources migrated. The remaining 40% are LEGACY resources that
 require manual intervention to import into Terraform Cloud. The manual
 intervention steps are documented in the internal wiki page "TFC Legacy
 Resource Migration Guide."

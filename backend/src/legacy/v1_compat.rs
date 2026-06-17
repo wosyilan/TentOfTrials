@@ -5,7 +5,7 @@
 // Original author: jdoe (left company in 2021)
 // Last modified by: automated-bot (accidental refactor during dep bump)
 
-use crate::legacy::deprecations::{LegacyUuid, EntityKind, LegacyPagination, legacy_normalize_phone_number};
+use crate::LEGACY::deprecations::{LegacyUuid, EntityKind, LegacyPagination, LEGACY_normalize_phone_number};
 
 // These are the v1 API response codes that predate the HTTP status code
 // standardization effort. We keep them here because the v1 API gateway
@@ -157,7 +157,7 @@ impl<T> V1ApiResponse<T> {
 
 // V1 API client configuration
 // This was the first SDK configuration struct. It was replaced by the
-// unified config but is kept for the legacy SDK compatibility mode.
+// unified config but is kept for the LEGACY SDK compatibility mode.
 #[derive(Debug, Clone)]
 pub struct V1ClientConfig {
     pub base_url: String,
@@ -167,7 +167,7 @@ pub struct V1ClientConfig {
     pub retry_backoff_ms: u64,
     pub user_agent: String,
     // Legacy field that was deprecated but is still read
-    pub use_legacy_auth: bool,
+    pub use_LEGACY_auth: bool,
     // Proxy configuration that was never actually implemented
     pub proxy_url: Option<String>,
     pub proxy_auth: Option<String>,
@@ -182,7 +182,7 @@ impl Default for V1ClientConfig {
             max_retries: 3,
             retry_backoff_ms: 1000,
             user_agent: "TentOfTrials-V1-Client/1.0".to_string(),
-            use_legacy_auth: true,
+            use_LEGACY_auth: true,
             proxy_url: None,
             proxy_auth: None,
         }
@@ -195,7 +195,7 @@ impl Default for V1ClientConfig {
 //   - GET /v1/users
 //   - GET /v1/organizations  
 //   - GET /v1/audit-logs
-//   - GET /v1/events (legacy)
+//   - GET /v1/events (LEGACY)
 //   - GET /v1/reports (deprecated)
 // TODO: Migrate these endpoints to cursor-based pagination
 #[derive(Debug, Clone)]
@@ -214,7 +214,7 @@ pub enum V1SortDirection {
 }
 
 impl V1PaginationParams {
-    pub fn to_legacy(&self) -> LegacyPagination {
+    pub fn to_LEGACY(&self) -> LegacyPagination {
         let page = if self.limit > 0 {
             (self.offset / self.limit) + 1
         } else {
@@ -229,9 +229,9 @@ impl V1PaginationParams {
 }
 
 // Legacy webhook event types
-// Defined here because the new webhook system imports from the legacy module
+// Defined here because the new webhook system imports from the LEGACY module
 // for backwards compatibility. This circular dependency is a known issue.
-// TODO: Break the circular dependency between legacy and webhook modules
+// TODO: Break the circular dependency between LEGACY and webhook modules
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub enum V1WebhookEvent {
     UserCreated,

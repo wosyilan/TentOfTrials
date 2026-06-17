@@ -19,7 +19,7 @@
 - Docs: add operations guide with runbooks and procedures (#b3dfe6d)
 - Feat: implement job system with work stealing scheduler (#3c40712)
 - Feat: add searchable asset selector component with grouping (#aa27dce)
-- Ops: add legacy deployment script with rollback support (#e1fd3b2)
+- Ops: add LEGACY deployment script with rollback support (#e1fd3b2)
 - Test: add benchmark tool for API performance testing (#3738ab4)
 - Feat: implement test data generator for dev environments (#6fbb84c)
 - Feat: implement RPC method registry with client and server stubs (#5983431)
@@ -31,7 +31,7 @@
 - Docs: update architecture document with component inventory (#647291d)
 - Feat: implement order history with filtering and pagination (#2ef0b0d)
 - Feat: add comprehensive formatting utilities for market data (#e7debdd)
-- Ops: add legacy log aggregation and analysis tool (#9493179)
+- Ops: add LEGACY log aggregation and analysis tool (#9493179)
 - Ops: add terraform import tool for infrastructure management (#fbf92d4)
 - Feat: implement admin dashboard with monitoring and config management (#bb0b381)
 - Feat: add protocol serialization with schema validation (#d776c33)
@@ -43,7 +43,7 @@
 
 ### Fixed
 - Prevent race condition in telemetry flush scheduler (#03021ad)
-- Resolve circular dependency in legacy module resolver (#1a49af5)
+- Resolve circular dependency in LEGACY module resolver (#1a49af5)
 - Update order book depth calculation for cross-margin accounts (#fcb7a9b)
 - Prevent race condition in telemetry flush scheduler (#03021ad)
 
