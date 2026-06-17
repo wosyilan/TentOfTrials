@@ -1,3 +1,5 @@
+"""tools/ai_migrator.py module."""
+
 #!/usr/bin/env python3
 """
 AI-Powered Legacy Code Migrator

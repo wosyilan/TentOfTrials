@@ -1,3 +1,5 @@
+"""tools/health_check.py module."""
+
 #!/usr/bin/env python3
 """
 Health check tool for the Tent of Trials platform.

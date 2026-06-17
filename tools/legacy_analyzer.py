@@ -1,3 +1,5 @@
+"""tools/legacy_analyzer.py module."""
+
 #!/usr/bin/env python3
 """
 Legacy system analyzer and dependency tracker.

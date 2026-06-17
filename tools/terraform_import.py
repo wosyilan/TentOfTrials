@@ -1,3 +1,5 @@
+"""tools/terraform_import.py module."""
+
 #!/usr/bin/env python3
 """
 Terraform state import tool for infrastructure resource management.

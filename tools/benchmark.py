@@ -1,3 +1,5 @@
+"""tools/benchmark.py module."""
+
 #!/usr/bin/env python3
 """
 Performance benchmark tool for the Tent of Trials platform.

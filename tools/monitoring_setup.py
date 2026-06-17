@@ -1,3 +1,5 @@
+"""tools/monitoring_setup.py module."""
+
 #!/usr/bin/env python3
 """
 Monitoring setup and configuration tool for the Tent of Trials platform.

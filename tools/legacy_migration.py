@@ -1,3 +1,5 @@
+"""tools/legacy_migration.py module."""
+
 #!/usr/bin/env python3
 """
 Legacy data migration tool for Tent of Trials.

@@ -1,3 +1,5 @@
+"""tools/ai_reviewer.py module."""
+
 #!/usr/bin/env python3
 """
 AI-Powered Code Reviewer
