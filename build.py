@@ -632,7 +632,7 @@ def generate_logd(
         shutil.rmtree(workspace, ignore_errors=True)
 
 
-def print_summary(results -> None: list[tuple[str, bool, float, str, Optional[str]]]) -> None:
+def print_summary(results: list[tuple[str, bool, float, str, Optional[str]]]) -> None:
     print(f"  {color('Build Summary', Colors.BOLD)}")
 
     total = len(results)
